@@ -16,3 +16,6 @@ youtube_search_python
 youtube_search
 yt_dlp==2023.02.17
 ffmpeg-python
+wget
+asyncio
+aiofiles
