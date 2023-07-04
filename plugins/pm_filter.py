@@ -1422,16 +1422,18 @@ async def auto_filter(client, msg, spoll=False):
             try:
                 if settings['auto_delete']:
                     await asyncio.sleep(600)
-                    await hehe.delete()
-                    await message.delete()
+                    await hehe.edit_text(text=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+                    #await hehe.delete()
+                    #await message.delete()
             except KeyError:
                 grpid = await active_connection(str(message.from_user.id))
                 await save_group_settings(grpid, 'auto_delete', True)
                 settings = await get_settings(message.chat.id)
                 if settings['auto_delete']:
                     await asyncio.sleep(900)
-                    await hehe.delete()
-                    await message.delete()
+                    await hehe.edit_text(text=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+                    #await hehe.delete()
+                    #await message.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
@@ -1439,47 +1441,53 @@ async def auto_filter(client, msg, spoll=False):
             try:
                 if settings['auto_delete']:
                     await asyncio.sleep(900)
-                    await hmm.delete()
-                    await message.delete()
+                    await hmm.edit_text(text=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+                    #await hmm.delete()
+                    #await message.delete()
             except KeyError:
                 grpid = await active_connection(str(message.from_user.id))
                 await save_group_settings(grpid, 'auto_delete', True)
                 settings = await get_settings(message.chat.id)
                 if settings['auto_delete']:
                     await asyncio.sleep(900)
-                    await hmm.delete()
-                    await message.delete()
+                    await hmm.edit_text(text=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+                    #await hmm.delete()
+                    #await message.delete()
         except Exception as e:
             logger.exception(e)
             fek = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
             try:
                 if settings['auto_delete']:
                     await asyncio.sleep(900)
-                    await fek.delete()
-                    await message.delete()
+                    await fek.edit_text(text=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+                    #await fek.delete()
+                    #await message.delete()
             except KeyError:
                 grpid = await active_connection(str(message.from_user.id))
                 await save_group_settings(grpid, 'auto_delete', True)
                 settings = await get_settings(message.chat.id)
                 if settings['auto_delete']:
                     await asyncio.sleep(900)
-                    await fek.delete()
-                    await message.delete()
+                    await fek.edit_text(text=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+                    #await fek.delete()
+                    #await message.delete()
     else:
         fuk = await message.reply_photo(photo=NOR_IMG, caption=cap, reply_markup=InlineKeyboardMarkup(btn))
         try:
             if settings['auto_delete']:
                 await asyncio.sleep(900)
-                await fuk.delete()
-                await message.delete()
+                await fuk.edit_text(text=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+                #await fuk.delete()
+                #await message.delete()
         except KeyError:
             grpid = await active_connection(str(message.from_user.id))
             await save_group_settings(grpid, 'auto_delete', True)
             settings = await get_settings(message.chat.id)
             if settings['auto_delete']:
                 await asyncio.sleep(900)
-                await fuk.delete()
-                await message.delete()
+                await fuk.edit_text(text=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+                #await fuk.delete()
+                #await message.delete()
     if spoll:
         await msg.message.delete()
 
