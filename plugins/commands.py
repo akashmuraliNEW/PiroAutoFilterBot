@@ -24,17 +24,15 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('➕ 𝖠𝖽𝖽 𝖬𝖾 𝖳𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ➕', url=f"http://t.me/{temp.U_NAME}?startgroup=true")
                 ],[
-                    InlineKeyboardButton('🛡 𝖮𝗐𝗇𝖾𝗋', callback_data="owner_info"),
-                    InlineKeyboardButton('🧩 𝖲𝗎𝗉𝗉𝗈𝗋𝗍 𝖦𝗋𝗈𝗎𝗉', url=f"https://t.me/{SUPPORT_CHAT}")
+                   InlineKeyboardButton('ℹ️ 𝖧𝖾𝗅𝗉', callback_data='help')
                 ],[
-                    InlineKeyboardButton('ℹ️ 𝖧𝖾𝗅𝗉', callback_data='help'),
-                    InlineKeyboardButton('😊 𝖠𝖻𝗈𝗎𝗍', callback_data='about')
-                ],[
-                    InlineKeyboardButton('🔎 𝖨𝗇𝗅𝗂𝗇𝖾 𝖲𝖾𝖺𝗋𝖼𝗁', switch_inline_query_current_chat='')
+                    InlineKeyboardButton('❈ 𝖮𝗐𝗇𝖾𝗋 ❈ ', url='https://t.me/HELL_GaM')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
-        await asyncio.sleep(2)
+        a = await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
+        await asyncio.sleep(10)
+        await message.delete()
+        await a.delete()
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
             await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, "Unknown"))       
@@ -47,13 +45,9 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('➕ 𝖠𝖽𝖽 𝖬𝖾 𝖳𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ➕', url=f"http://t.me/{temp.U_NAME}?startgroup=true")
                 ],[
-                    InlineKeyboardButton('🛡 𝖮𝗐𝗇𝖾𝗋', callback_data="owner_info"),
-                    InlineKeyboardButton('🧩 𝖲𝗎𝗉𝗉𝗈𝗋𝗍 𝖦𝗋𝗈𝗎𝗉', url=f"https://t.me/{SUPPORT_CHAT}")
+                   InlineKeyboardButton('ℹ️ 𝖧𝖾𝗅𝗉', callback_data='help')
                 ],[
-                    InlineKeyboardButton('ℹ️ 𝖧𝖾𝗅𝗉', callback_data='help'),
-                    InlineKeyboardButton('😊 𝖠𝖻𝗈𝗎𝗍', callback_data='about'),
-                ],[
-                    InlineKeyboardButton('🔎 𝖨𝗇𝗅𝗂𝗇𝖾 𝖲𝖾𝖺𝗋𝖼𝗁', switch_inline_query_current_chat='')
+                    InlineKeyboardButton('❈ 𝖮𝗐𝗇𝖾𝗋 ❈ ', url='https://t.me/HELL_GaM')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -72,7 +66,7 @@ async def start(client, message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🤖 𝖩𝗈𝗂𝗇 𝖴𝗉𝖽𝖺𝗍𝖾𝗌 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 🤖", url=invite_link.invite_link
+                    "🤖 𝖩𝗈𝗂𝗇 𝖴𝗉𝖽𝖺𝗍𝖾𝗌 𝖢𝗁𝖺𝗇𝗇𝖾𝗅 To Use Me 🤖", url=invite_link.invite_link
                 )
             ]
         ]
@@ -95,14 +89,9 @@ async def start(client, message):
         buttons = [[
                     InlineKeyboardButton('➕ 𝖠𝖽𝖽 𝖬𝖾 𝖳𝗈 𝖸𝗈𝗎𝗋 𝖦𝗋𝗈𝗎𝗉 ➕', url=f"http://t.me/{temp.U_NAME}?startgroup=true")
                 ],[
-                    InlineKeyboardButton('🛡 𝖮𝗐𝗇𝖾𝗋', callback_data="owner_info"),
-                    InlineKeyboardButton('🧩 𝖲𝗎𝗉𝗉𝗈𝗋𝗍 𝖦𝗋𝗈𝗎𝗉', url=f"https://t.me/{SUPPORT_CHAT}")
+                   InlineKeyboardButton('ℹ️ 𝖧𝖾𝗅𝗉', callback_data='help')
                 ],[
-                    InlineKeyboardButton('ℹ️ 𝖧𝖾𝗅𝗉', callback_data='help'),
-                    InlineKeyboardButton('😊 𝖠𝖻𝗈𝗎𝗍', callback_data='about')
-                ],[
-                    InlineKeyboardButton('🔎 𝖨𝗇𝗅𝗂𝗇𝖾 𝖲𝖾𝖺𝗋𝖼𝗁', switch_inline_query_current_chat='')
-                    
+                    InlineKeyboardButton('❈ 𝖮𝗐𝗇𝖾𝗋 ❈ ', url='https://t.me/HELL_GaM')
                   ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -141,7 +130,7 @@ async def start(client, message):
                 file_id=file.file_id,
                 caption=f_caption,
                 protect_content=True if pre == 'filep' else False,
-                reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⚔️ 𝖯𝖨𝖱𝖮 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⚔️', url=f"https://t.me/piroxbots") ] ] ),
+                reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton('𝐌𝐎𝐕𝐈𝐄𝐒🎬', url='https://t.me/MM_Films'),InlineKeyboardButton('𝗚𝗥𝗢𝗨𝗣♦', url='https://t.me/MM_Movies_world2')] ] ),
             )
         return
     
@@ -177,7 +166,7 @@ async def start(client, message):
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
-                    reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⚔️ 𝖯𝖨𝖱𝖮 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⚔️', url=f"https://t.me/piroxbots") ] ] ),
+                    reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton('𝐌𝐎𝐕𝐈𝐄𝐒🎬', url='https://t.me/MM_Films'),InlineKeyboardButton('𝗚𝗥𝗢𝗨𝗣♦', url='https://t.me/MM_Movies_world2')] ] ),
                     
                 )
             except FloodWait as e:
@@ -188,7 +177,7 @@ async def start(client, message):
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
-                    reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⚔️ 𝖯𝖨𝖱𝖮 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⚔️', url=f"https://t.me/piroxbots") ] ] ),
+                    reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton('𝐌𝐎𝐕𝐈𝐄𝐒🎬', url='https://t.me/MM_Films'),InlineKeyboardButton('𝗚𝗥𝗢𝗨𝗣♦', url='https://t.me/MM_Movies_world2')] ] ),
                 )
             except Exception as e:
                 logger.warning(e, exc_info=True)
@@ -250,7 +239,7 @@ async def start(client, message):
                 chat_id=message.from_user.id,
                 file_id=file_id,
                 protect_content=True if pre == 'filep' else False,
-                reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⚔️ 𝖯𝖨𝖱𝖮 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⚔️', url="https://t.me/piroxbots") ] ] ),
+                reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton('𝐌𝐎𝐕𝐈𝐄𝐒🎬', url='https://t.me/MM_Films'),InlineKeyboardButton('𝗚𝗥𝗢𝗨𝗣♦', url='https://t.me/MM_Movies_world2')] ] ),
             )
             filetype = msg.media
             file = getattr(msg, filetype.value)
@@ -284,7 +273,7 @@ async def start(client, message):
         file_id=file_id,
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
-        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('⚔️ 𝖯𝖨𝖱𝖮 𝖴𝖯𝖣𝖠𝖳𝖤𝖲 ⚔️', url="https://t.me/piroxbots") ] ] ),
+        reply_markup=InlineKeyboardMarkup( [ [InlineKeyboardButton('𝐌𝐎𝐕𝐈𝐄𝐒🎬', url='https://t.me/MM_Films'),InlineKeyboardButton('𝗚𝗥𝗢𝗨𝗣♦', url='https://t.me/MM_Movies_world2')] ] ),
     )
                     
 
@@ -515,7 +504,7 @@ async def settings(client, message):
                     callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    '5 𝖬𝗂𝗇' if settings["auto_delete"] else '❌ 𝖮𝖿𝖿',
+                    '20 𝖬𝗂𝗇' if settings["auto_delete"] else '❌ 𝖮𝖿𝖿',
                     callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}',
                 ),
             ],
@@ -542,8 +531,8 @@ async def settings(client, message):
         ]
 
         btn = [[
-                InlineKeyboardButton("⬇ 𝖮𝗉𝖾𝗇 𝖧𝖾𝗋𝖾 ⬇", callback_data=f"opnsetgrp#{grp_id}"),
-                InlineKeyboardButton("➡ 𝖮𝗉𝖾𝗇 𝗂𝗇 𝖯𝖬 ➡", callback_data=f"opnsetpm#{grp_id}")
+                InlineKeyboardButton("𝖮𝗉𝖾𝗇 𝖧𝖾𝗋𝖾 ⇩", callback_data=f"opnsetgrp#{grp_id}"),
+                InlineKeyboardButton("𝖮𝗉𝖾𝗇 𝗂𝗇 𝖯𝖬 ⬂", callback_data=f"opnsetpm#{grp_id}")
               ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
