@@ -11,3 +11,8 @@ datetime
 pytz
 aiohttp
 psutil==5.9.4
+youtube_dl
+youtube_search_python
+youtube_search
+yt_dlp==2023.02.17
+ffmpeg-python
