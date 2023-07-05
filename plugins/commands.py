@@ -504,7 +504,7 @@ async def settings(client, message):
                     callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    '20 𝖬𝗂𝗇' if settings["auto_delete"] else '❌ 𝖮𝖿𝖿',
+                    '5 𝖬𝗂𝗇' if settings["auto_delete"] else '❌ 𝖮𝖿𝖿',
                     callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}',
                 ),
             ],
@@ -531,8 +531,8 @@ async def settings(client, message):
         ]
 
         btn = [[
-                InlineKeyboardButton("𝖮𝗉𝖾𝗇 𝖧𝖾𝗋𝖾 ⇩", callback_data=f"opnsetgrp#{grp_id}"),
-                InlineKeyboardButton("𝖮𝗉𝖾𝗇 𝗂𝗇 𝖯𝖬 ⬂", callback_data=f"opnsetpm#{grp_id}")
+                InlineKeyboardButton("⬇ 𝖮𝗉𝖾𝗇 𝖧𝖾𝗋𝖾 ⬇", callback_data=f"opnsetgrp#{grp_id}"),
+                InlineKeyboardButton("➡ 𝖮𝗉𝖾𝗇 𝗂𝗇 𝖯𝖬 ➡", callback_data=f"opnsetpm#{grp_id}")
               ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
